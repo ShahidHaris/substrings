@@ -17,8 +17,8 @@ def substrings(word, collection)
     end
 
     result = Hash.new(0)
-    possible_combinations(word).map |a|
-        collection.map |b|
+    possible_combinations(word).map do |a|
+        collection.map do |b|
             if a.downcase == b.downcase
                 result[b] += 1
             end
@@ -26,3 +26,8 @@ def substrings(word, collection)
     end
     result
 end
+
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+substrings("below", dictionary)
+
+substrings("Howdy partner, sit down! How's it going?", dictionary)
