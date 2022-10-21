@@ -15,4 +15,14 @@ def substrings(word, collection)
         end
         combination
     end
+
+    result = Hash.new(0)
+    possible_combinations(word).map |a|
+        collection.map |b|
+            if a.downcase == b.downcase
+                result[b] += 1
+            end
+        end
+    end
+    result
 end
